@@ -1,0 +1,12 @@
+[38860:1] 2025-07-26 14:24:03.514 [0x4078(183) CUIAManager::Initialize] [Initialize]
+[38860:1] 2025-07-26 14:24:03.515 [0x4078(0) CUIAManager::Initialize] [/Initialize] SUCCESS
+[38012:1] 2025-07-26 14:24:03.652 [0x6ED0(183) CUIAManager::Initialize] [Initialize]
+[38012:1] 2025-07-26 14:24:03.653 [0x6ED0(183) CUIAManager::Initialize] [/Initialize] SUCCESS
+[36800:1] 2025-07-26 14:24:04.065 [0x58E4(183) CUIAManager::Initialize] [Initialize]
+[36800:1] 2025-07-26 14:24:04.065 [0x58E4(183) CUIAManager::Initialize] [/Initialize] SUCCESS
+[36800:1] 2025-07-26 14:24:04.284 [0x58E4(183) CUIAManager::Uninitialize] [Uninitialize]
+[36800:1] 2025-07-26 14:24:04.285 [0x58E4(183) CUIAManager::Uninitialize] [/Uninitialize] SUCCESS
+[38012:1] 2025-07-26 14:24:04.428 [0x6ED0(183) CUIAManager::Uninitialize] [Uninitialize]
+[38012:1] 2025-07-26 14:24:04.433 [0x6ED0(183) CUIAManager::Uninitialize] [/Uninitialize] SUCCESS
+[38860:1] 2025-07-26 14:24:04.583 [0x4078(183) CUIAManager::Uninitialize] [Uninitialize]
+[38860:1] 2025-07-26 14:24:04.584 [0x4078(183) CUIAManager::Uninitialize] [/Uninitialize] SUCCESS

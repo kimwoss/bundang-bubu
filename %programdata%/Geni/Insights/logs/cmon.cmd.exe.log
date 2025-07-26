@@ -1,0 +1,31 @@
+[28728:1] 2025-07-26 14:24:03.401 [0x85B4(3) InitializeLog] [SET_LOGPATH] %programdata%\Geni\Insights\logs\cmon.cmd.exe.log
+[28728:1] 2025-07-26 14:24:03.402 [0x85B4(0) CxCommonApi::LogModuleInfo] [MODULE LOADING] ModuleName cmon64.dll, Version [2.0.0.1], ModulePath C:\Program Files\Geni\Insights\temp\cmon64.dll ModifiedTime 2024-12-05 11:18:18
+[28728:1] 2025-07-26 14:24:03.403 [0x85B4(183) CxConsoleMonitor::Initialize] [Initialize]
+[28728:1] 2025-07-26 14:24:03.404 [0x85B4(183) CxSensorPipeClient::Initialize] [Initialize]
+[28728:1] 2025-07-26 14:24:03.405 [0x85B4(0) CxThreadPool::Initialize] Queue init : OutputQue 0, nThreadPoolSize : 1
+[28728:1] 2025-07-26 14:24:03.405 [0x85B4(183) CxThreadPool::CreateThreadPool] Create 1 WorkerThread
+[28728:1] 2025-07-26 14:24:03.406 [0x85B4(183) CxConsoleMonitor::InstallHook] [InstallHook]
+[28728:1] 2025-07-26 14:24:03.408 [0x85B4(126) CxConsoleMonitor::xGetProcAddress] [GET_PROC_ADDR] ReadConsoleW from kernelbase.dll
+[28728:1] 2025-07-26 14:24:03.408 [0x85B4(183) CxConsoleMonitor::InstallHook] [INSTALL_HOOK] ReadConsoleW : cmd.exe:28728
+[28728:1] 2025-07-26 14:24:03.409 [0x85B4(183) CxConsoleMonitor::xGetProcAddress] [GET_PROC_ADDR] ReadConsoleInputW from kernelbase.dll
+[28728:1] 2025-07-26 14:24:03.410 [0x85B4(183) CxConsoleMonitor::InstallHook] [INSTALL_HOOK] RealReadConsoleInputW : cmd.exe:28728
+[28728:1] 2025-07-26 14:24:03.411 [0x85B4(183) CxConsoleMonitor::InstallHook] [SUCCESS]
+[28728:1] 2025-07-26 14:24:03.411 [0x85B4(183) CxConsoleMonitor::GetCmonProfileInfo] [REQ_CMON_PROFILE] 
+[28728:1] 2025-07-26 14:24:03.412 [0x85B4(0) CxConsoleMonitor::Initialize] [/Initialize] SUCCESS
+[28728:1] 2025-07-26 14:24:03.472 [0x1B38(87) CxThreadPool::ThreadEntry] Worker Thread begins
+[28728:1] 2025-07-26 14:24:03.478 [0x1B38(1) CxSensorPipeClient::SendJson] [SEND][ReqType:4] {
+   "PID" : 28728,
+   "ProcPath" : "C:\\Windows\\system32\\cmd.exe",
+   "ReqType" : "xSensorRequestType_GetCmonProfile"
+}
+
+[28728:1] 2025-07-26 14:24:03.478 [0x1B38(183) CxSensorPipeClient::SendJson] [RECV] {
+   "MaxConsoleInputLength" : 1000
+}
+
+[28728:1] 2025-07-26 14:24:03.479 [0x1B38(183) CxConsoleMonitor::PipeResponseCallback] [RES_CALLBACK]
+[28728:1] 2025-07-26 14:24:03.480 [0x1B38(183) CxConsoleMonitor::PipeResponseCallback] [CMON_PROFILE] MaxConsoleInputLength : 1000
+[28728:1] 2025-07-26 14:24:04.606 [0x85B4(0) CxConsoleMonitor::Uninitialize] [Uninitialize]
+[28728:1] 2025-07-26 14:24:04.617 [0x85B4(183) CxSensorPipeClient::Uninitialize] [Uninitialize]
+[28728:1] 2025-07-26 14:24:04.619 [0x85B4(183) CxSensorPipeClient::Uninitialize] [/Uninitialize]
+[28728:1] 2025-07-26 14:24:04.620 [0x85B4(183) CxConsoleMonitor::Uninitialize] [/Uninitialize] SUCCESS

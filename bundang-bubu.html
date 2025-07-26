@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>분당부부의 감성 여행과 일상 브이로그</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+            line-height: 1.6;
+            color: #5d4e37;
+            background-color: #faf8f5;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), 
+                        url('https://yt3.googleusercontent.com/UmjkLAHrK7yWImhtBaMAf38GilkhB5PW_ZdjKcLpcENEOf6-_xOJp12bCfQWO8affK8Lujnhe4g=w1707-fcrop64=1,00005a57ffffa5a8-k-c0xffffffff-no-nd-rj') center/cover;
+            padding: 80px 0;
+            text-align: center;
+            position: relative;
+            min-height: 600px;
+            display: flex;
+            align-items: center;
+        }
+
+        .channel-logo {
+            width: 120px;
+            height: 120px;
+            background: url('https://yt3.googleusercontent.com/h377VltEBBIL0E3E0h43Tmj6RrOzPed2d6Sf8wBx0M_x_7naP7fILhV0BhymbXxdy64n4Mv1M28=s160-c-k-c0x00ffffff-no-rj') center/cover;
+            border-radius: 50%;
+            margin: 0 auto 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            border: 4px solid rgba(255, 255, 255, 0.9);
+        }
+
+        .header-content {
+            position: relative;
+            z-index: 2;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+        }
+
+        .hero-banner {
+            background: linear-gradient(135deg, rgba(255, 107, 53, 0.8), rgba(229, 90, 43, 0.8)), 
+                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400"><defs><pattern id="travel" patternUnits="userSpaceOnUse" width="100" height="100"><circle cx="20" cy="20" r="2" fill="%23f5f0e8" opacity="0.3"/><circle cx="80" cy="60" r="1.5" fill="%23ede4d3" opacity="0.4"/><rect x="40" y="70" width="20" height="10" rx="2" fill="%23d4b896" opacity="0.2"/></pattern></defs><rect width="1200" height="400" fill="url(%23travel)"/></svg>') center/cover;
+            height: 400px;
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 30px 0;
+            box-shadow: 0 10px 30px rgba(93, 78, 55, 0.2);
+        }
+
+        .hero-text {
+            background: rgba(245, 240, 232, 0.95);
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            max-width: 500px;
+        }
+
+        h1 {
+            font-size: 2.8rem;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+        }
+
+        .subtitle {
+            font-size: 1.3rem;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 40px;
+            font-weight: 400;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+        }
+
+        .youtube-link {
+            display: inline-block;
+            background: #ff6b35;
+            color: white;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(255, 107, 53, 0.3);
+        }
+
+        .youtube-link:hover {
+            background: #e55a2b;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(255, 107, 53, 0.4);
+        }
+
+        .playlists {
+            padding: 80px 0;
+            background: #faf8f5;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.2rem;
+            color: #8b4513;
+            margin-bottom: 50px;
+            font-weight: 500;
+        }
+
+        .playlist-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .playlist-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(93, 78, 55, 0.1);
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .playlist-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(93, 78, 55, 0.2);
+            border-color: #d4b896;
+        }
+
+        .playlist-link {
+            text-decoration: none;
+            color: inherit;
+            display: block;
+            transition: all 0.3s ease;
+        }
+
+        .playlist-link:hover {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .card-image {
+            width: 100%;
+            height: 200px;
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+            position: relative;
+        }
+
+        .card-image::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(139, 69, 19, 0.7), rgba(160, 130, 109, 0.7));
+        }
+
+        .card-image i {
+            position: relative;
+            z-index: 1;
+        }
+
+        .business-trip {
+            background: linear-gradient(135deg, rgba(139, 69, 19, 0.8), rgba(160, 130, 109, 0.8)), url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 200"><rect fill="%234a90e2" width="300" height="200"/><circle cx="100" cy="60" r="30" fill="%23f5a623" opacity="0.7"/><rect x="150" y="120" width="80" height="40" rx="5" fill="%23f5f0e8" opacity="0.8"/></svg>');
+        }
+
+        .korea-travel {
+            background: linear-gradient(135deg, rgba(245, 107, 53, 0.8), rgba(229, 90, 43, 0.8)), url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 200"><rect fill="%2350e3c2" width="300" height="200"/><path d="M50 150 Q100 100 150 150 T250 150" stroke="%23f5f0e8" stroke-width="3" fill="none" opacity="0.8"/><circle cx="80" cy="80" r="15" fill="%23f5a623" opacity="0.7"/></svg>');
+        }
+
+        .vietnam-travel {
+            background: linear-gradient(135deg, rgba(52, 152, 219, 0.8), rgba(41, 128, 185, 0.8)), url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 200"><rect fill="%23e74c3c" width="300" height="200"/><circle cx="150" cy="100" r="40" fill="%23f39c12" opacity="0.6"/><wave><path d="M0 120 Q75 100 150 120 T300 120 V200 H0 Z" fill="%232980b9" opacity="0.7"/></wave></svg>');
+        }
+
+        .resignation-diary {
+            background: linear-gradient(135deg, rgba(231, 76, 60, 0.8), rgba(192, 57, 43, 0.8)), url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 200"><rect fill="%234a4a4a" width="300" height="200"/><rect x="100" y="80" width="100" height="40" rx="20" fill="%23f5f0e8" opacity="0.8"/><path d="M80 160 L220 40" stroke="%23f5a623" stroke-width="2" opacity="0.7"/></svg>');
+        }
+
+        .wedding-prep {
+            background: linear-gradient(135deg, rgba(231, 76, 60, 0.8), rgba(192, 57, 43, 0.8)), url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 200"><rect fill="%23e91e63" width="300" height="200"/><heart><path d="M150 180 C120 150 80 120 80 90 C80 70 95 60 110 60 C125 60 150 80 150 80 C150 80 175 60 190 60 C205 60 220 70 220 90 C220 120 180 150 150 180 Z" fill="%23f5f0e8" opacity="0.8"/></heart></svg>');
+        }
+
+        .portugal-honeymoon {
+            background: linear-gradient(135deg, rgba(155, 89, 182, 0.8), rgba(142, 68, 173, 0.8)), url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 200"><rect fill="%239b59b6" width="300" height="200"/><circle cx="80" cy="60" r="25" fill="%23f39c12" opacity="0.7"/><rect x="180" y="120" width="60" height="60" rx="30" fill="%23e74c3c" opacity="0.6"/></svg>');
+        }
+
+        .brewery-life {
+            background: linear-gradient(135deg, rgba(243, 156, 18, 0.8), rgba(230, 126, 34, 0.8)), url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 200"><rect fill="%23f39c12" width="300" height="200"/><circle cx="150" cy="100" r="50" fill="%23e67e22" opacity="0.7"/><rect x="120" y="140" width="60" height="40" rx="5" fill="%232c3e50" opacity="0.8"/></svg>');
+        }
+
+        .recipe-cooking {
+            background: linear-gradient(135deg, rgba(46, 204, 113, 0.8), rgba(39, 174, 96, 0.8)), url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 200"><rect fill="%2327ae60" width="300" height="200"/><circle cx="100" cy="80" r="20" fill="%23f39c12" opacity="0.7"/><circle cx="200" cy="120" r="15" fill="%23e74c3c" opacity="0.8"/><rect x="130" y="150" width="40" height="30" rx="3" fill="%23f5f0e8" opacity="0.8"/></svg>');
+        }
+
+        .card-content {
+            padding: 25px;
+        }
+
+        .card-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #8b4513;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .video-count {
+            background: #ff6b35;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        .card-description {
+            color: #a0826d;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        footer {
+            background: #8b4513;
+            color: #f5f0e8;
+            padding: 40px 0;
+            text-align: center;
+        }
+
+        .footer-content {
+            margin-bottom: 20px;
+        }
+
+        .social-icons {
+            margin-bottom: 20px;
+        }
+
+        .social-icons a {
+            color: #f5f0e8;
+            font-size: 1.5rem;
+            margin: 0 15px;
+            transition: color 0.3s ease;
+        }
+
+        .social-icons a:hover {
+            color: #ff6b35;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .subtitle {
+                font-size: 1rem;
+            }
+            
+            .hero-banner {
+                height: 300px;
+            }
+            
+            .hero-text {
+                padding: 20px;
+                margin: 0 20px;
+            }
+            
+            .playlist-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+            }
+            
+            .container {
+                padding: 0 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="channel-logo"></div>
+                <h1>분당부부와 함께하는 여행 브이로그</h1>
+                <p class="subtitle">여행, 퇴사, 브루어리, 레시피까지 — 우리 부부의 소소한 삶을 담았어요.</p>
+            
+            <div class="hero-banner">
+                <div class="hero-text">
+                    <h2>지금, 분당부부와 함께 여행을 시작해요</h2>
+                    <a href="https://www.youtube.com/@bundang_bubu" class="youtube-link" target="_blank">
+                        <i class="fab fa-youtube"></i> 채널 구독하기
+                    </a>
+                </div>
+            </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="playlists">
+        <div class="container">
+            <h2 class="section-title">우리의 이야기들</h2>
+            
+            <div class="playlist-grid">
+                <a href="https://youtube.com/playlist?list=PLZLV-SO5D7oDS2NCzE0gibG6tlHAdeOmQ&si=uYGkNtYyqKf2FNx1" class="playlist-link" target="_blank">
+                    <div class="playlist-card">
+                        <div class="card-image business-trip">
+                            <i class="fas fa-suitcase-rolling"></i>
+                        </div>
+                        <div class="card-content">
+                            <h3 class="card-title">
+                                남편의 비밀스러운 출장일기
+                                <span class="video-count">6개</span>
+                            </h3>
+                            <p class="card-description">혼자만의 출장 여행에서 발견한 특별한 순간들과 숨겨진 맛집 이야기</p>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="https://youtube.com/playlist?list=PLZLV-SO5D7oBbGi0MJQzIS5weB-KrdUcc&si=FOqaFEa2wQRnp8Ox" class="playlist-link" target="_blank">
+                    <div class="playlist-card">
+                        <div class="card-image korea-travel">
+                            <i class="fas fa-map-marked-alt"></i>
+                        </div>
+                        <div class="card-content">
+                            <h3 class="card-title">
+                                초감각적 대한민국 여행기
+                                <span class="video-count">28개</span>
+                            </h3>
+                            <p class="card-description">우리나라 곳곳을 누비며 찾은 감성 가득한 여행지와 추억들</p>
+                        </div>
+                    </div>
+                </a>
+
+                <div class="playlist-card">
+                    <div class="card-image vietnam-travel">
+                        <i class="fas fa-umbrella-beach"></i>
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">
+                            베트남 깟바섬 여행기
+                            <span class="video-count">4개</span>
+                        </h3>
+                        <p class="card-description">에메랄드빛 바다와 이국적인 풍경이 펼쳐진 베트남 깟바섬에서의 로맨틱한 여행</p>
+                    </div>
+                </div>
+
+                <div class="playlist-card">
+                    <div class="card-image resignation-diary">
+                        <i class="fas fa-door-open"></i>
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">
+                            10개월 간의 퇴사 일기
+                            <span class="video-count">7개</span>
+                        </h3>
+                        <p class="card-description">새로운 시작을 위한 용기 있는 결단과 그 과정에서의 솔직한 이야기</p>
+                    </div>
+                </div>
+
+                <div class="playlist-card">
+                    <div class="card-image wedding-prep">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">
+                            결혼 준비 다이어리
+                            <span class="video-count">4개</span>
+                        </h3>
+                        <p class="card-description">평생의 동반자가 되기까지의 설렘과 준비 과정의 진솔한 기록</p>
+                    </div>
+                </div>
+
+                <div class="playlist-card">
+                    <div class="card-image portugal-honeymoon">
+                        <i class="fas fa-plane"></i>
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">
+                            포르투갈 신혼여행기
+                            <span class="video-count">11개</span>
+                        </h3>
+                        <p class="card-description">유럽의 숨겨진 보석 포르투갈에서 보낸 달콤한 신혼여행의 모든 순간</p>
+                    </div>
+                </div>
+
+                <div class="playlist-card">
+                    <div class="card-image brewery-life">
+                        <i class="fas fa-beer"></i>
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">
+                            소소잼맨 당한 브루어리 일상
+                            <span class="video-count">29개</span>
+                        </h3>
+                        <p class="card-description">맥주 사랑꾼의 브루어리 탐방과 다양한 맥주 이야기가 가득한 일상</p>
+                    </div>
+                </div>
+
+                <div class="playlist-card">
+                    <div class="card-image recipe-cooking">
+                        <i class="fas fa-utensils"></i>
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">
+                            쉽고 맛있는 집밥 레시피
+                            <span class="video-count">41개</span>
+                        </h3>
+                        <p class="card-description">누구나 따라할 수 있는 간단하면서도 맛있는 우리집 레시피 모음</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="social-icons">
+                    <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" title="Email"><i class="fas fa-envelope"></i></a>
+                </div>
+                <p>&copy; 2025 분당부부. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
